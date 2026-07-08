@@ -9,5 +9,6 @@ const adapter = new PrismaPg({
 });
 
 export const prisma = new PrismaClient({
-  adapter
+  adapter,
+  log: env.NODE_ENV === 'dev' ? ['query'] : []
 });
